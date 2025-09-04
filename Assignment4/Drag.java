@@ -23,16 +23,17 @@ public class Drag {
 		@Test 
 		public void mouseHovertest() throws InterruptedException {
 			Actions action = new Actions(driver);
-			WebElement loanAmountSlider = driver.findElement(By.xpath("//span[@class=\"ui-slider-handle ui-corner-all ui-state-default\"]/parent::div[@Id=\"loanamountslider\"]"));
-			action.dragAndDropBy(loanAmountSlider,-80,0).build().perform();
+			
+			WebElement loanAmountSlider = driver.findElement(By.xpath("//div[@Id=\"loanamountslider\"]/span"));
+			action.dragAndDropBy(loanAmountSlider,80,0).build().perform();
 			Thread.sleep(3000);
 			
-			WebElement loaninterestslider = driver.findElement(By.xpath("//span[@class=\"ui-slider-handle ui-corner-all ui-state-default\"]/parent::div[@Id=\"loaninterestslider\"]"));
-			action.dragAndDropBy(loaninterestslider, 0, 0).build().perform();
+			WebElement loaninterestslider = driver.findElement(By.xpath("//div[@Id=\"loaninterestslider\"]/span"));
+			action.dragAndDropBy(loaninterestslider, 150, 0).build().perform();
 			Thread.sleep(3000);
 			
-			WebElement loanTenureSlider = driver.findElement(By.xpath("//span[@class=\"ui-slider-handle ui-corner-all ui-state-default\"]/parent::div[@Id=\"loantermslider\"]"));
-			action.dragAndDropBy(loanTenureSlider, 0, 0).build().perform();
+			WebElement loanTenureSlider = driver.findElement(By.xpath("//div[@Id=\"loantermslider\"]/span"));
+			action.dragAndDropBy(loanTenureSlider, -110, 0).build().perform();
 			Thread.sleep(3000);
 			}
 		@AfterTest
